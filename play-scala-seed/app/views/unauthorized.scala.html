@@ -1,0 +1,20 @@
+@()(implicit requestHeader: RequestHeader)
+@layout("SDES Unauthorised") {
+
+<div class="content__body">
+    <h1>Check that you’ve registered</h1>
+    <div>
+        <p>You need to register for the service before you can use it.</p>
+
+        <div class="form-field form-field--submit">
+            <a href=@controllers.routes.SdesAuthController.unauthorized() class="button">Register</a>
+        </div>
+    </div>
+</div>
+
+
+    @partials.unauthSideBar()
+
+}
+
+

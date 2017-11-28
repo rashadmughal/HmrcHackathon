@@ -1,0 +1,17 @@
+@()
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data:; font-src 'self' 'unsafe-inline' data:; script-src 'self' 'unsafe-inline' data:;">
+
+    <!--[if gt IE 8]><!--><link rel="stylesheet" media="screen" href="@routes.Assets.versioned("template/govuk-template.css")"/><!--<![endif]-->
+
+    <link href="@routes.Assets.versioned("template/govuk-template-print.css")" media="print" rel="stylesheet" type="text/css" />
+
+    <!--[if gte IE 9]><!-->
+    <!-- TODO fix the font loading issue -->
+    <!--<link href="@routes.Assets.versioned("template/fonts.css")" media="all" rel="stylesheet" type="text/css" />-->
+    <!--<![endif]-->
+
+    <link rel="shortcut icon" href="@routes.Assets.versioned("template/images/favicon.ico")" type="image/x-icon" />
+    <link href="@routes.Assets.versioned("2.236.0/stylesheets/application.min.css")" media="screen" rel="stylesheet" type="text/css" />
+    <link href="@routes.Assets.versioned("stylesheets/sdes.css")" media="screen" rel="stylesheet" type="text/css" />
+    <script src="@routes.Assets.versioned("javascripts/jquery-3.2.1.min.js")" type="application/javascript"></script>

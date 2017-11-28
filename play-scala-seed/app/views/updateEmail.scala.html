@@ -1,0 +1,72 @@
+@import helper._
+
+@(liUser: String, preferences: Preferences, emailForm: Form[models.forms.EmailForm], updated:Boolean=false)(implicit messages: Messages, requestHeader: RequestHeader)
+
+@layout("Manage your organisation's contact details", Option(liUser)) {
+
+<div class="content__body">
+
+    <div class="form-group">
+        <a class="link-back back-to-previous" href="javascript:history.back();">Back</a>
+    </div>
+    <h1>Change your organisation's contact email address</h1>
+
+    @if(updated) {
+        <div class="alert alert--success" role="alert">
+            <p class="alert__message">Your organisation's email address has been successfully changed.</p>
+        </div>
+    }
+    @if(emailForm.hasErrors){
+        <div class="alert alert--failure" role="alert">
+            @for(e <- emailForm.errors) {
+            <p class="alert__message">@messages(e.message)</p>
+            }
+        </div>
+    }
+
+    <details id="email-information">
+        <summary class="[modifier class]">Why do I need to provide an email address?</summary>
+        <div>
+            <p>By providing us with your organisation's email address, we can help you manage your documents easily.</p>
+            <p> We will let you know when:</p>
+            <ul class="bullets">
+                <li>you receive a new document from HMRC</li>
+                <li>the status of your uploaded files</li>
+                <li>when a file is about to be deleted</li>
+            </ul>
+        </div>
+    </details>
+
+    <ul>
+        <li><strong>Current email address:</strong></li>
+
+        @if(preferences.notificationEmail.isEmpty) {
+            <li id="current-email">No email provided</li>
+        } else {<li id="current-email">@preferences.notificationEmail</li>}
+
+    </ul>
+
+    <br>
+
+    <strong>New email address</strong>
+    <p class="form-hint flush">Provide an email address that multiple users have access to such as a distribution list</p>
+
+
+    @helper.form(action = routes.PreferencesController.updateEmail(), 'class -> "form") {
+        <input type="hidden" id= "_csrf" name="_csrf"  class="csrf" value="#csrf_token"/>
+        <dl id="email_field">
+            <dd>
+                <input type="text" name="email" id="email"/>
+            </dd>
+        </dl>
+
+        <div class="form-field form-field--submit">
+            <input id="update-email-button" type="submit" class="button" value="Save"/>
+            <a href="@routes.SdesController.vLandingPage()" class="button button--link">Go back to your dashboard</a>
+        </div>
+    }
+</div>
+
+    @partials.rightSideBar(Some(liUser))
+
+}

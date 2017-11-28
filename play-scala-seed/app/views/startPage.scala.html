@@ -1,0 +1,43 @@
+@(authorisedUser: Option[String]=None)(implicit requestHeader: RequestHeader)
+
+@layout("Secure Data Exchange Services", authorisedUser) {
+
+    <div class="content__body">
+        <h1 class="heading-xlarge">Secure Data Exchange Services (SDES)</h1>
+
+        <p>HMRC’s Secure Data Exchange Services (SDES) allows you to securely exchange information online with HMRC.
+            It is more secure than transferring data via hard drives, paper or memory sticks.</p>
+
+        <details>
+            <summary role="button" aria-expanded="false">
+                <span class="summary">Some Help</span>
+            </summary>
+            <div class="panel-indent" id="details-content-1">
+                <p>Some hidden <a rel="external" href='#'>links to resources</a> and explanatory copy.
+                </p>
+            </div>
+        </details>
+
+        <div class="alert alert--info">
+            <p class="alert__message">You must be both registered to use the service and have a
+                <a href="#">Government Gateway</a> account - you’ll have one if you’ve used HMRC online services before.</p>
+        </div>
+
+        <p>
+            <a class="button button--get-started" href='@controllers.routes.SdesController.vLandingPage()' role="button">Start now</a>
+        </p>
+    </div>
+
+    <div class="sidebar">
+        <aside class="govuk-related-items" role="complementary">
+            <h2 class="heading-medium" id="subsection-title">Secure Data Exchange Services</h2>
+            <nav role="navigation" aria-labelledby="subsection-title">
+                <ul class="font-xsmall">
+                    <li><a href="#">Register to use SDES</a></li>
+                    <li><a href="#" class="bold-xsmall">More <span class="visuallyhidden">in Subsection</span></a></li>
+                    <li><a href='@controllers.routes.SdesController.failedLoginPage("Unauthorised User","The entered password does not match with our records")'>Failed Login</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </div>
+}

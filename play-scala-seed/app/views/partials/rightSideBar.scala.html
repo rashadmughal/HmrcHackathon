@@ -1,0 +1,21 @@
+@(liUserOpt: Option[String]=None)
+<aside class="sidebar">
+
+    <div class="section--blue-top sidebar--hidden-sm"></div>
+    <section>
+
+        <div id="user-name-and-last-login-holder" class="last-login" data-qa="last-login-summary">
+          @for(liUser <- liUserOpt) {
+            <h3 id="welcome-text">Welcome, @liUser</h3>
+          }
+        </div>
+
+        <ul class="section__ul--link-list sidebar__list">
+            <li class="sidebar__list-item font-xsmall"><a href="#">Messages</a></li>
+            <li class="sidebar__list-item font-xsmall"><a href="@controllers.routes.PreferencesController.contactDetails()" id="contact-details">Organisation details</a></li>
+            <li class="sidebar__list-item font-xsmall"><a href="#">Help and contact</a></li>
+        </ul>
+
+    </section>
+
+</aside>

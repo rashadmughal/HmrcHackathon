@@ -1,0 +1,13 @@
+@(liUser: String, reason: String)(implicit requestHeader: RequestHeader)
+@layout("SDES Error", Option(liUser)) {
+
+<div class="content__body">
+    <h1>SDES Error</h1>
+
+    <div>
+        <p>The error <b>@reason</b> has occurred.</p>
+    </div>
+</div>
+
+@partials.rightSideBar(Some(liUser))
+}

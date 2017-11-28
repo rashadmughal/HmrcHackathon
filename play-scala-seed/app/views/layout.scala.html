@@ -1,0 +1,16 @@
+@(title: String, authorisedUser: Option[String]=None)(content: Html)(implicit requestHeader: RequestHeader)
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>@title</title>
+        @partials.styles()
+    </head>
+    <body>
+        @partials.header(authorisedUser)
+        <main id="content" role="main">
+            @content
+        </main>
+        @partials.footer()
+    </body>
+</html>
