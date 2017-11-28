@@ -26,7 +26,7 @@
                     </br>
         <p>Flat-rate VAT amount due: £@{vat.amountDue.formatted("%1.2f")}</p>
 
-        <p>If you agree with this value, please click approve to be directed to your bank and approve payment</p>
+        <p>If you agree with this amount, please click continue to be directed to your bank and approve payment.</p>
         <p>
             <a class="button button--get-started" href="@routes.BankApprovePaymentController.index(vat.amountDue.formatted("%1.2f"))" role="button">Continue</a>
         </p>
