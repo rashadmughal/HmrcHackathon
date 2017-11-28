@@ -1,0 +1,33 @@
+@()
+
+@layout("Your Flat-rate VAT calculation") {
+
+    <div class="content__body">
+        <h1 class="heading-xlarge">Your Flat-rate VAT Calculation</h1>
+
+        <p>Based on your transaction history, HMRC has calculated your Flat-rate VAT using a Flat-rate percentage of 16.5%</p>
+
+
+        <table style="width:100%">
+            <tr>
+                <th>Date</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+                <td>30/09/2017</td>
+                <td>£12,000</td>
+            </tr>
+            <tr>
+                <td>30/10/2017</td>
+                <td>£14,000</td>
+            </tr>
+        </table>
+
+        <p>Flat-rate VAT amount: £4,290</p>
+
+        <p>If you agree with this value, please click approve to be directed to your bank and approve payment</p>
+        <p>
+            <a class="button button--get-started"  role="button">Continue</a>
+        </p>
+    </div>
+}
