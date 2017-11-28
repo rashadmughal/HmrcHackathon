@@ -1,6 +1,5 @@
-@import helper._
 
-@(authorisedUser: Option[String]=None)(implicit requestHeader: RequestHeader)
+
 <header role="banner" id="global-header" class="with-proposition">
     <div class="header-wrapper">
         <div class="header-global">
@@ -15,27 +14,8 @@
             <div class="content">
                 <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
                 <nav id="proposition-menu">
-                    <a href="@controllers.routes.SdesController.startPage()" id="proposition-name">Secure Data Exchange Services</a>
+                    <a href="#" id="proposition-name">Secure Data Exchange Services</a>
 
-                    @if(authorisedUser){
-                    <ul id="proposition-links" class="header__menu__proposition-links js-visible">
-                        <li>
-                            <form name="logout-form" id="logout-form" method="POST" action="/logout">
-                                <input type="hidden" id= "_csrf" name="_csrf" class="csrf" value="#csrf_token"/>
-                                <input type="submit" value="Logout" class="hidden" id="perform-logout-button">
-                                <a href="#" id="logOutNavHref">Sign out</a>
-                            </form>
-
-                            <script type="text/javascript">
-                                    $('#logOutNavHref').click(function() {
-                                       $('#logout-form').submit(); return false;
-                                    }).show();
-
-                            </script>
-                        </li>
-
-                    </ul>
-                    }
                 </nav>
             </div>
         </div>

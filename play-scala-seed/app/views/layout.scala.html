@@ -1,4 +1,4 @@
-@(title: String, authorisedUser: Option[String]=None)(content: Html)(implicit requestHeader: RequestHeader)
+@(title: String)(content: Html)
 
 <!DOCTYPE html>
 <html>
@@ -7,7 +7,7 @@
         @partials.styles()
     </head>
     <body>
-        @partials.header(authorisedUser)
+        @partials.header()
         <main id="content" role="main">
             @content
         </main>

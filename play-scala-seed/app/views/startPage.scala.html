@@ -1,6 +1,6 @@
-@(authorisedUser: Option[String]=None)(implicit requestHeader: RequestHeader)
+@()
 
-@layout("Secure Data Exchange Services", authorisedUser) {
+@layout("Pay Your VAT") {
 
     <div class="content__body">
         <h1 class="heading-xlarge">Secure Data Exchange Services (SDES)</h1>
@@ -24,20 +24,7 @@
         </div>
 
         <p>
-            <a class="button button--get-started" href='@controllers.routes.SdesController.vLandingPage()' role="button">Start now</a>
+            <a class="button button--get-started" href='#' role="button">Start now</a>
         </p>
-    </div>
-
-    <div class="sidebar">
-        <aside class="govuk-related-items" role="complementary">
-            <h2 class="heading-medium" id="subsection-title">Secure Data Exchange Services</h2>
-            <nav role="navigation" aria-labelledby="subsection-title">
-                <ul class="font-xsmall">
-                    <li><a href="#">Register to use SDES</a></li>
-                    <li><a href="#" class="bold-xsmall">More <span class="visuallyhidden">in Subsection</span></a></li>
-                    <li><a href='@controllers.routes.SdesController.failedLoginPage("Unauthorised User","The entered password does not match with our records")'>Failed Login</a></li>
-                </ul>
-            </nav>
-        </aside>
     </div>
 }
