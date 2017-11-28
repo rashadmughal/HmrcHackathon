@@ -15,7 +15,7 @@
             @vat.transactions.map{tran =>
                 <tr>
                     <td>@{tran.date}</td>
-                    <td>@{tran.value.formatted("%1.2f")}</td>
+                    <td>£@{tran.value.formatted("%1.2f")}</td>
                     <td>£@{tran.vat.formatted("%1.2f")}</td>
 
                 </tr>
