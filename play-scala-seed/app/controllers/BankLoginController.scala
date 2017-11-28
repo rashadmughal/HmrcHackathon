@@ -6,11 +6,11 @@ import play.api.mvc._
 
 class BankLoginController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
 
-  def index() = Action { implicit request: Request[AnyContent] =>
+  def index(bankName: String) = Action { implicit request: Request[AnyContent] =>
     Ok(views.html.bankLogin())
   }
 
   def submit = Action { implicit request: Request[AnyContent] =>
-    Redirect("/#")
+    Redirect(routes.BankGrantAuthController.index())
   }
 }

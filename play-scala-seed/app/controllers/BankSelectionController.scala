@@ -21,4 +21,8 @@ class BankSelectionController @Inject()(cc: ControllerComponents) extends Abstra
   def index() = Action { implicit request: Request[AnyContent] =>
     Ok(views.html.bankSelection())
   }
+
+  def submit() = Action { implicit request: Request[AnyContent] =>
+    Redirect(routes.BankLoginController.index("yorkshire"))
+  }
 }

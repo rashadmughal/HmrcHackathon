@@ -1,4 +1,4 @@
-@()
+@()(implicit header: RequestHeader)
 
 @layout("Select your bank account") {
 
@@ -10,17 +10,19 @@
 
         <p>Once you have selected your bank account provider, HMRC will use your bank account transaction history to automatically generate your VAT bill.</p>
 
-        <label><h3>Please select your Bank</h3></label>
-        <select id = "myList">
-            <option value = "barclays">Barclays</option>
-            <option value = "first-direct">First Direct</option>
-            <option value = "hsbc">HSBC</option>
-            <option value = "natwest">Natwest</option>
-            <option value = "rbs">RBS</option>
-            <option value = "yorkshire">Yorkshire Bank</option>
-        </select>
-        <p>
-            <a class="button button--get-started"  role="button">Continue</a>
-        </p>
+        @helper.form(action = routes.BankSelectionController.submit()) {
+            @helper.CSRF.formField
+            <label><h3>Please select your Bank</h3></label>
+            <select id = "myList" name="bank">
+                <option value = "barclays">Barclays</option>
+                <option value = "first-direct">First Direct</option>
+                <option value = "hsbc">HSBC</option>
+                <option value = "natwest">Natwest</option>
+                <option value = "rbs">RBS</option>
+                <option value = "yorkshire">Yorkshire Bank</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        }
     </div>
 }

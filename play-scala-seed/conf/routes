@@ -8,11 +8,12 @@ GET     /                           controllers.HomeController.index
 GET     /gglogin/                   controllers.LoginController.index
 POST    /gglogin/                   controllers.LoginController.submit
 GET     /bankselection/             controllers.BankSelectionController.index
+POST    /bankselection/             controllers.BankSelectionController.submit
 GET     /bankgrantauth/             controllers.BankGrantAuthController.index
 GET     /bankapprovepayment/        controllers.BankApprovePaymentController.index
 GET     /vatcalculation/            controllers.VatCalculationController.index
 
-GET     /banklogin/                 controllers.BankLoginController.index
+GET     /banklogin/:bankName/       @controllers.BankLoginController.index(bankName)
 POST    /banklogin/                 controllers.BankLoginController.submit
 
 # Map static resources from the /public folder to the /assets URL path
