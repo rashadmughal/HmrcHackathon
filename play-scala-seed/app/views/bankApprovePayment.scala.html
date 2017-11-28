@@ -1,6 +1,6 @@
-@(amount: String)
+@(amount: String)(implicit requestHeader: RequestHeader)
 
-@layout("Yorkshire Bank - Authorise HMRC") {
+@bankLayout("Yorkshire Bank - Authorise HMRC") {
 
     <div class="content__body">
         <h1 class="heading-xlarge">Yorkshire Bank</h1>
@@ -17,7 +17,7 @@
         <p>Please click approve to grant access or cancel to deny access.</p>
 
         <p>
-            <a class="button button--get-started"  role="button">Approve</a>
+            <a class="button button--get-started" href="@routes.PaymentCompleteController.index()" role="button">Approve</a>
             <a class="button button--get-started"  role="button">Cancel</a>
         </p>
     </div>
