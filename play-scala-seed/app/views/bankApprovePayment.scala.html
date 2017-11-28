@@ -1,11 +1,11 @@
-@()
+@(amount: String)
 
 @layout("Yorkshire Bank - Authorise HMRC") {
 
     <div class="content__body">
         <h1 class="heading-xlarge">Yorkshire Bank</h1>
 
-        <p>HMRC has requested £1001 to be debited from your account.</p>
+        <p>HMRC has requested £@amount to be debited from your account.</p>
         <p>Please select an account to debit this amount from:</p>
 
         <label><h3>Please select an account</h3></label>

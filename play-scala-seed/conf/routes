@@ -10,7 +10,7 @@ POST    /gglogin/                   controllers.LoginController.submit
 GET     /bankselection/             controllers.BankSelectionController.index
 POST    /bankselection/             controllers.BankSelectionController.submit
 GET     /bankgrantauth/             controllers.BankGrantAuthController.index
-GET     /bankapprovepayment/        controllers.BankApprovePaymentController.index
+GET     /bankapprovepayment/:amount/        controllers.BankApprovePaymentController.index(amount)
 GET     /vatcalculation/            controllers.VatCalculationController.index
 
 GET     /banklogin/:bankName/       @controllers.BankLoginController.index(bankName)

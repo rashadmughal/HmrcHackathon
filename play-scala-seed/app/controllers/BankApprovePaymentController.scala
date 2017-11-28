@@ -18,7 +18,7 @@ class BankApprovePaymentController @Inject()(cc: ControllerComponents) extends A
    * will be called when the application receives a `GET` request with
    * a path of `/`.
    */
-  def index() = Action { implicit request: Request[AnyContent] =>
-    Ok(views.html.bankApprovePayment())
+  def index(amount: String) = Action { implicit request: Request[AnyContent] =>
+    Ok(views.html.bankApprovePayment(amount))
   }
 }
