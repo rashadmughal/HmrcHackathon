@@ -1,10 +1,10 @@
-@()
+@(transactions: String)
 
 @layout("Your Flat-rate VAT calculation") {
 
     <div class="content__body">
         <h1 class="heading-xlarge">Your Flat-rate VAT Calculation</h1>
-
+        @transactions
         <p>Based on your transaction history, HMRC has calculated your Flat-rate VAT using a Flat-rate percentage of 16.5%</p>
 
         <table style="width:100%">
