@@ -1,4 +1,6 @@
-@()
+@import helper._
+
+@()(implicit header: RequestHeader)
 
 @layout("Sign In - Government Gateway") {
     <div class="content__body">
@@ -12,9 +14,8 @@
             Enter your Government Gateway credentials to sign in. You received these when you created your HMRC online account.
         </p>
 
-        <form action="/gg/sign-in?continue=%2Fpersonal-account%2Fdo-uplift%3FredirectUrl%3D%252Fpersonal-account&amp;origin=PERTAX&amp;accountType=individual" method="POST" id="loginForm" novalidate="novalidate">
-            <input type="hidden" name="csrfToken" value="2635aa6d3948c01e2274d1355f0cd23b3ab256e2-1511870161587-6bfbd8ada0737fa138735b82"/>
-
+        <form action="@routes.LoginController.submit()" method="POST" id="loginForm" novalidate="novalidate">
+            @CSRF.formField
             <fieldset>
                 <div class="form-field-group ">
 
