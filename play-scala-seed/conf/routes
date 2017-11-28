@@ -12,6 +12,8 @@ POST    /bankselection/             controllers.BankSelectionController.submit
 GET     /bankgrantauth/             controllers.BankGrantAuthController.index
 GET     /bankapprovepayment/:amount/        controllers.BankApprovePaymentController.index(amount)
 GET     /vatcalculation/            controllers.VatCalculationController.index
+GET     /confirmpayment/            controllers.ConfirmPaymentController.index
+GET     /paymentcomplete/           controllers.PaymentCompleteController.index
 
 GET     /banklogin/:bankName/       @controllers.BankLoginController.index(bankName)
 POST    /banklogin/                 controllers.BankLoginController.submit
