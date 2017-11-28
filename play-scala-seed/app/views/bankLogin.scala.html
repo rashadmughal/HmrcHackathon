@@ -1,0 +1,32 @@
+@import helper._
+
+@()(implicit header: RequestHeader)
+
+@bankLayout("Login to Yorkshire Bank") {
+  <form action="@routes.BankLoginController.submit()" method="POST" id="loginForm" novalidate="novalidate">
+    @CSRF.formField
+    <fieldset>
+      <div class="form-field-group ">
+
+
+
+        <div class="form-field">
+          <label class="label--inline" for="userId">User ID</label>
+          <input type="text" id="userId" name="userId" required />
+        </div>
+
+
+        <div class="form-field">
+          <label class="label--inline" for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+
+        <div class="form-field">
+          <button class="button" type="submit" id="signin">Sign in</button>
+        </div>
+      </div>
+    </fieldset>
+  </fieldset>
+
+  </form>
+}

@@ -12,5 +12,8 @@ GET     /bankgrantauth/             controllers.BankGrantAuthController.index
 GET     /bankapprovepayment/        controllers.BankApprovePaymentController.index
 GET     /vatcalculation/            controllers.VatCalculationController.index
 
+GET     /banklogin/                 controllers.BankLoginController.index
+POST    /banklogin/                 controllers.BankLoginController.submit
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

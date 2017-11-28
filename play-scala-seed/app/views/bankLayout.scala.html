@@ -1,0 +1,15 @@
+@(title: String)(content: Html)(implicit header: RequestHeader)
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>@title</title>
+    @partials.styles()
+  </head>
+  <body>
+    <main id="content" role="main">
+      <img src="@routes.Assets.versioned("images/yblogo.png")" />
+    @content
+    </main>
+  </body>
+</html>
