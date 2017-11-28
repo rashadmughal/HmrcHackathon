@@ -11,7 +11,6 @@ class LoginController @Inject()(cc: ControllerComponents) extends AbstractContro
   }
 
   def submit() = Action { implicit request: Request[AnyContent] =>
-    //Ok(views.html.startPage())
-    Redirect(routes.HomeController.index())
+    Redirect(routes.BankSelectionController.index())
   }
 }
